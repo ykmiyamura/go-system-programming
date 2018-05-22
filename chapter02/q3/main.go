@@ -20,6 +20,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	encoder := json.NewEncoder(writer)
 	encoder.Encode(source)
 	gzipWriter.Flush()
+	gzipWriter.Close()
 }
 
 func main() {
